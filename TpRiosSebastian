@@ -1,0 +1,48 @@
+1) ¿Que es python?
+Python es un lenguaje de programación interpretado cuya filosofía hace hincapié en una sintaxis que favorezca un código legible. 
+Se trata de un lenguaje de programación multiparadigma, ya que soporta orientación a objetos, programación imperativa y, en menor
+medida, programación funcional.
+
+2) ¿En que plataformas se puede ejecutar Python?
+Python puede ser utilizado en diversas plataformas y sistemas operativos, entre los que podemos destacar los más populares, 
+cómo Windows, Mac OS X y Linux. Pero, además, Python también puede funcionar en smartphones, Nokia desarrolló un intérprete 
+de esté lenguaje para su sistema operativo Symbian.
+
+3) ¿Que es una variable, y como se declara en python?
+En programación, las variables son espacios reservados en la memoria que, como su nombre indica, pueden cambiar de contenido 
+a lo largo de la ejecución de un programa. Una variable corresponde a un área reservada en la memoria principal del ordenador.
+Siendo un verdadero lenguaje orientado a objetos, Python usa tipado dinámico y conteo de referencias para la administración de 
+memoria. Una característica importante es la resolución dinámica de nombres; es decir, lo que enlaza un método y un nombre de 
+variable durante la ejecución del programa (también llamado enlace dinámico de métodos).
+•	Las variables no necesitan ser declaradas
+•	Y cada variable es un objeto
+
+4) ¿Que es un tipo de dato, cuales existen en python y para que sirven individualmente?
+Tipo	Clase	Notas	Ejemplo
+str	Cadena	Inmutable	'Cadena'
+unicode	Cadena	Versión Unicode de str
+u'Cadena'
+list	Secuencia	Mutable, puede contener objetos de diversos tipos	[4.0, 'Cadena', True]
+tuple	Secuencia	Inmutable, puede contener objetos de diversos tipos	(4.0, 'Cadena', True)
+set	Conjunto	Mutable, sin orden, no contiene duplicados	set([4.0, 'Cadena', True])
+frozenset	Conjunto	Inmutable, sin orden, no contiene duplicados	frozenset([4.0, 'Cadena', True])
+dict	Mapping	Grupo de pares clave:valor	{'key1': 1.0, 'key2': False}
+int	Número entero	Precisión fija, convertido en long en caso de overflow.	42
+long	Número entero	Precisión arbitraria	42L ó 456966786151987643L
+float	Número decimal	Coma flotante de doble precisión	3.1415927
+complex	Número complejo	Parte real y parte imaginaria j.	(4.5 + 3j)
+bool	Booleano	Valor booleano verdadero o falso	True o False
+
+5) ¿Que es una función, para que sirve y como se declara en python?
+6) ¿Que es una clase y como se declara en python?
+7) ¿Que es un objeto y como se declara en python?
+8) ¿Que es una librería, y como se importa en python?
+9) ¿Que es PIP y para que se utiliza?
+10) ¿Que es un entorno virtual (virtualenv), para que sirve y como se utiliza?
+11) ¿Que es un archivo, y como se utiliza en python?
+12) ¿Que es JSON, y como se utiliza en python?
+13) ¿Que es un contenedor en python, cuales son sus tipos y diferencias?
+14) Genere un archivo de código python, donde utilice los diferentes contenedores.
+15) Genere un archivo de código python, donde utilice clases, objetos y contenedores.
+16) Genere un archivo de código python, donde utilice clases, objetos, contenedores, almenos una librería externa  y archivos.
+
