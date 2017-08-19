@@ -203,9 +203,66 @@ distancia(a,b)
 
 15) Genere un archivo de código python, donde utilice clases, objetos y contenedores.
 
-class Punto:
+import math
 
-def
+class cuadratica():
+    #atributos
+    #a,b,c Coeficientes del polinomio
+    def __init__(self):
+        self.P=[]
+
+
+    def ingresarCoeficientes(self):
+        self.a=float(raw_input("Ingrese el Coeficiente a \n"))
+        self.b=float(raw_input("Ingrese el Coeficiente b \n"))
+        self.c=float(raw_input("Ingrese el Coeficiente c \n"))
+
+    def cargarPolinomio(self):
+        self.P.append(self.a)
+        self.P.append(self.b)
+        self.P.append(self.c)
+
+    def calcular(self):
+        if (self.P[1]*self.P[1]-4*self.P[0]*self.P[2]<0):
+            if (raw_input("Este polinomio tiene raices complejas, desea continuar? s / n \n")=="s"):
+                j=math.fabs(self.P[1]*self.P[1]-4*self.P[0]*self.P[2])
+                j=math.sqrt(j)
+                bc=-self.P[1]/2
+                j=j/2
+                raices=(complex(bc,j),complex(bc,-j))
+
+
+                print("           La funcion cuadratica")
+                print("\n")
+                print( "y= " + str(self.P[0]) +" x^2 + " + str(self.P[1]) + " x + " +str(self.P[2]))
+                print("\n")
+                print("\n")
+                print("las raices complejas son= "+ str(raices))
+                print("\n")
+
+            else:
+                print "por favor vuelva a ingresar un nuevo polinomio"
+                return
+        else:
+            s=math.sqrt(self.P[1]*self.P[1]-4*self.P[0]*self.P[2])
+
+            x1 = (-self.P[1]-s)/(2*self.P[0])
+            x2 = (-self.P[1]+s)/(2*self.P[0])
+            raices=(x1,x2)
+
+            print("\n")
+            print("\n")
+            print("           La funcion cuadratica")
+            print("\n")
+            print( "y= " + str(self.P[0]) +" x^2 + " + str(self.P[1]) + " x + " +str(self.P[2]))
+            print("\n")
+            print("\n")
+            print("las raices son x1,x2= "+ str(raices))
+
+g=cuadratica()
+g.ingresarCoeficientes()
+g.cargarPolinomio()
+g.calcular()
 
 
 
