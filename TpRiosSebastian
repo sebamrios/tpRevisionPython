@@ -57,21 +57,23 @@ entidades o conceptos del mundo real. Cada clase es un modelo que define un conj
 métodos apropiados para operar con dichos datos -el comportamiento. Cada objeto creado a partir de la clase se denomina instancia de 
 la clase.
 
-class Clase:
+class Nombre_Clase:
     <declaración-1>                        <------ atributos de la clase
     .
     .
     .
     <declaración-N>                        <------ atributos de la clase
  
-    def NOMBRE_1( LISTA DE PARAMETROS ):   <------ metodos de la clase
+    def __init__(self,...)
+    
+    def NOMBRE_1( self, Lista de parametros ):   <------ metodos de la clase
       SENTENCIAS 
       return variable_1 
     .
     .
     .
 
-    def NOMBRE_N( LISTA DE PARAMETROS ):   <------ metodos de la clase
+    def NOMBRE_N(self, Lista de parametros ):   <------ metodos de la clase
       SENTENCIAS 
       return variable_n 
 
@@ -81,17 +83,131 @@ En el mundo de la programación orientada a objetos (POO), un objeto es el resul
 es el anteproyecto que ofrece la funcionalidad en ella definida, pero ésta queda implementada sólo al crear una instancia de la clase,
 en la forma de un objeto.
 
-
-
-
+    Nombre_Objeto=Nombre_Clase()
 
 8) ¿Que es una librería, y como se importa en python?
+
+Una Libreria es un conjunto de implementaciones funcionales, codificadas en un lenguaje de programación(como por ejemplo Python), 
+que ofrece una interfaz bien definida para la funcionalidad que se invoca.
+A diferencia de un programa ejecutable, el comportamiento que implementa una biblioteca no espera ser utilizada de forma autónoma (un 
+programa sí: tiene un punto de entrada principal), sino que su fin es ser utilizada por otros programas, independientes y de forma 
+simultánea. Por otra parte, el comportamiento de una biblioteca no tiene por qué diferenciarse en demasía del que pudiera especificarse
+en un programa. Es más, unas bibliotecas pueden requerir de otras para funcionar, pues el comportamiento que definen refina, o altera, 
+el comportamiento de la biblioteca original; o bien la hace disponible para otra tecnología o lenguaje de programación.
+
+from Nombre_Archivo import Nombre_Libreria
+
 9) ¿Que es PIP y para que se utiliza?
+
+PIP es un sistema de Gestion de Paquetes utilizado para instalar y administrar paquetes de software escritos en Python, de forma facil.
+Otra gran funcionalidad de PIP es que permite gestionar listas de paquetes y sus numeros de version correspondientes a traves de un archivo 
+de requisitos. Esto nos permite una recreacion eficaz de un conjunto de paquetes en un entorno separado o entorno virtual.
+
 10) ¿Que es un entorno virtual (virtualenv), para que sirve y como se utiliza?
+
+Un entorno virtual es un ambiente creado con el objetivo de aislar recursos como librerias y entorno de ejecucion, del sistema principal
+o de otros entornos virtuales.Lo anterior significa que en el mismo sistema, maquina o computadora, es posible tener instaladas multiples 
+versiones de una misma libreria sin crear ningun tipo de conflicto.
+
+Mediante PIP esposible instalar virtualenv, y con solo ejecuntando desde una consola el script "activate" para iniciarlo que se encuentra
+alojado en el directorio bin/ del virutalenv
+
+    $cd mi_entorno
+    $source bin/activate
+    (mi_entorno)$
+    
+El prompt de la terminal nos indicaria que el virtualenv esta activado. De esta manera ya es posible utilizar los paquetes Python instalados
+en el virtualenv "mi_entorno",asi como instalar paquetes adicionales.
+
 11) ¿Que es un archivo, y como se utiliza en python?
+
+Un archivo o fichero informático es un conjunto de bits que son almacenados en un dispositivo. Un archivo es identificado por un nombre y la 
+descripción de la carpeta o directorio que lo contiene.
+Existen dos formas básicas de acceder a un archivo, una es utilizarlo como un archivo de texto, que procesaremos línea por línea;
+la otra es tratarlo como un archivo binario, que procesaremos byte por byte.
+
+    archivo = open("archivo.txt")    -----> abrir un archivo
+    línea=archivo.readline()
+      while línea != '':
+        línea=archivo.readline()
+    archivo.close()                 ------> cerrar archivo
+    
+Los archivos pueden ser abiertos con un proposito en especial,por ejemplo para solo lectura (r), solo escritura (w) o sólo escritura posicionándose al 
+final del archivo (a), que se especifica en como parametro de entrada de la funcion "open( "nombre_archivo","opcion")
+
+No todos los archivos son archivos de texto, y por lo tanto no todos los archivos pueden ser procesados por líneas. Existen archivos en los que cada byte
+tiene un significado particular, y es necesario manipularlos conociendo el formato en que están los datos para poder procesar esa información.
+Para abrir un archivo y manejarlo de forma binaria es necesario agregarle una b al parámetro de modo.
+Para procesar el archivo de a bytes en lugar de líneas, se utiliza la función contenido = archivo.read(n) para leer n bytes y archivo.write(contenido), 
+para escribir contenido en la posición actual del archivo.
+Al manejar un archivo binario, es necesario poder conocer la posición actual en el archivo y poder modificarla. Para obtener la posición actual se 
+utiliza archivo.tell(), que indica la cantidad de bytes desde el comienzo del archivo.
+Para modificar la posición actual se utiliza archivo.seek(inicio, desde) , que permite desplazarse una cantidad inicio de bytes en el archivo, contando 
+desde el comienzo del archivo, desde la posición actual o desde el final.   
+
 12) ¿Que es JSON, y como se utiliza en python?
+
+JSON (JavaScript Object Notation) es un formato para el intercambios de datos, básicamente JSON describe los datos con una sintaxis 
+dedicada que se usa para identificar y gestionar los datos. JSON nació como una alternativa a XML, el fácil uso en javascript ha 
+generado un gran numero de seguidores de esta alternativa. Una de las mayores ventajas que tiene el uso de JSON es que puede ser leído
+por cualquier lenguaje de programación. Por lo tanto, puede ser usado para el intercambio de información entre distintas tecnologías.
+
+Para hacer uso de JSON en Python, debemos instalar el paquete json, el cual, incluye todas las funciones necesarias para el tratamiento
+de JSONs. Como ejemplo de uso vamos a usar el siguiente JSON, el cual es el mismo JSON que pusimos como ejemplo en los tutoriales 
+anteriores de JSON.
+
+
+import json
+
+data = {"Fruteria": [  {"Fruta":   [    {"Nombre":"Manzana","Cantidad":10},    {"Nombre":"Pera","Cantidad":20},    {"Nombre":"Naranja","Cantidad":30}   ]  },  {"Verdura":   [    {"Nombre":"Lechuga","Cantidad":80},    {"Nombre":"Tomate","Cantidad":15},    {"Nombre":"Pepino","Cantidad":50}   ]  } ]}
+
+#Nos imprime en pantalla data como un tipo de dato nativo.
+print 'DATA:', repr(data)
+
+#Nos devuelve el String con el JSON
+data_string = json.dumps(data)
+print 'JSON:', data_string
+
 13) ¿Que es un contenedor en python, cuales son sus tipos y diferencias?
+
+En Python existen tres tipos de contenedores:
+
+Tupla Es una coleccion´ fija de elementos. Esto significa que no es posible agregar, modificar, o eliminar elementos una vez creada.
+T = ( 1, 2, "tres", 4, "cinco" )
+
+Lista Es una coleccion dinamica, es decir, sı es posible agregar y eliminar elementos, asi como tambien modificarlos.
+L = [ 1, 2, "tres", 4, "cinco" ]
+
+Diccionario Es una asociacion o mapeo de claves a valores, donde cada clave tiene un unico valor asociado. 
+D = { ’lunes’: ’fisica’, ’martes’: ’biologia’,’miercoles’: ’quimica’,’jueves’: ’matematica’,’viernes’: ’geologia’ }
+
 14) Genere un archivo de código python, donde utilice los diferentes contenedores.
+
+#script para calcular las distancias entre dos puntos conformados por tuplas
+
+def distancia(p1,p2): #Esta funcion recibe dos tuplas
+  x1,y1=p1
+  x2,y2=p2
+
+  dx=x2-x1
+  dy=y2-y1
+
+  d=((dx ** 2 + dy ** 2) ** 0.5)
+  print "La distancia es de :"
+  print d
+
+a=(1,1)
+b=(2,2)
+
+distancia(a,b)
+
 15) Genere un archivo de código python, donde utilice clases, objetos y contenedores.
-16) Genere un archivo de código python, donde utilice clases, objetos, contenedores, almenos una librería externa  y archivos.
+
+class Punto:
+
+def
+
+
+
+16) Genere un archivo de código python, donde utilice clases, objetos, contenedores, al menos una librería externa  y archivos.
 
