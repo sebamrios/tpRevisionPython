@@ -178,23 +178,34 @@ T = ( 1, 2, "tres", 4, "cinco" )
 Lista Es una coleccion dinamica, es decir, sı es posible agregar y eliminar elementos, asi como tambien modificarlos.
 L = [ 1, 2, "tres", 4, "cinco" ]
 
-Diccionario Es una asociacion o mapeo de claves a valores, donde cada clave tiene un unico valor asociado. 
+Diccionario es una asociacion o mapeo de claves a valores, donde cada clave tiene un unico valor asociado.Es mutable. 
 D = { ’lunes’: ’fisica’, ’martes’: ’biologia’,’miercoles’: ’quimica’,’jueves’: ’matematica’,’viernes’: ’geologia’ }
 
 14) Genere un archivo de código python, donde utilice los diferentes contenedores.
 
 #script para calcular las distancias entre dos puntos conformados por tuplas
 
-def distancia(p1,p2): #Esta funcion recibe dos tuplas
-  x1,y1=p1
+def distancia(p1,p2):                        #Esta funcion recibe dos tuplas
+  
+  r={'x1':0,'y1':0,'x2':0,'y2':0'd':0}      #Diccionario que guarda info de la funcion:parametros y resultado
+  
+  x1,y1=p1          
   x2,y2=p2
 
   dx=x2-x1
   dy=y2-y1
 
   d=((dx ** 2 + dy ** 2) ** 0.5)
+  
+  r['x1']=x1
+  r['y1']=y1
+  r['x2']=x2
+  r['y2']=y2
+  r['d']=d
+ 
   print "La distancia es de :"
-  print d
+  print r.get('d')
+  
 
 a=(1,1)
 b=(2,2)
@@ -205,12 +216,11 @@ distancia(a,b)
 
 import math
 
-class cuadratica():
+class resolvente():
     #atributos
     #a,b,c Coeficientes del polinomio
     def __init__(self):
         self.P=[]
-
 
     def ingresarCoeficientes(self):
         self.a=float(raw_input("Ingrese el Coeficiente a \n"))
@@ -259,12 +269,10 @@ class cuadratica():
             print("\n")
             print("las raices son x1,x2= "+ str(raices))
 
-g=cuadratica()
+g=resolvente()
 g.ingresarCoeficientes()
 g.cargarPolinomio()
 g.calcular()
-
-
 
 16) Genere un archivo de código python, donde utilice clases, objetos, contenedores, al menos una librería externa  y archivos.
 
