@@ -22,9 +22,9 @@ variable durante la ejecución del programa (también llamado enlace dinámico d
 
 4) ¿Que es un tipo de dato, cuales existen en python y para que sirven individualmente?
 
-Tipo	            Clase	                            Notas	                                                    Ejemplo
-str	              Cadena	                Inmutable	                                                          'Cadena'
-unicode	          Cadena	                Versión Unicode de str                                              u'Cadena'
+Tipo              Clase	                            Notas	                                                    Ejemplo
+str               Cadena	                Inmutable	                                                          'Cadena'
+unicode           Cadena	                Versión Unicode de str                                              u'Cadena'
 list	            Secuencia	              Mutable, puede contener objetos de diversos tipos           	[4.0, 'Cadena', True]
 tuple	            Secuencia	              Inmutable, puede contener objetos de diversos tipos	          (4.0, 'Cadena', True)
 set	              Conjunto	              Mutable, sin orden, no contiene duplicados	                set([4.0, 'Cadena', True])
@@ -153,8 +153,7 @@ generado un gran numero de seguidores de esta alternativa. Una de las mayores ve
 por cualquier lenguaje de programación. Por lo tanto, puede ser usado para el intercambio de información entre distintas tecnologías.
 
 Para hacer uso de JSON en Python, debemos instalar el paquete json, el cual, incluye todas las funciones necesarias para el tratamiento
-de JSONs. Como ejemplo de uso vamos a usar el siguiente JSON, el cual es el mismo JSON que pusimos como ejemplo en los tutoriales 
-anteriores de JSON.
+de JSONs. Como ejemplo de uso JSON:
 
 
 import json
@@ -191,11 +190,12 @@ def distancia(p1,p2):                        #Esta funcion recibe dos tuplas
   
   x1,y1=p1          
   x2,y2=p2
+  
+  Ld=[]
+  Ld[0]=x2-x1
+  Ld[1]=y2-y1
 
-  dx=x2-x1
-  dy=y2-y1
-
-  d=((dx ** 2 + dy ** 2) ** 0.5)
+  d=((Ld[0]** 2 + Ld[1]** 2) ** 0.5)
   
   r['x1']=x1
   r['y1']=y1
