@@ -275,4 +275,5 @@ g.cargarPolinomio()
 g.calcular()
 
 16) Genere un archivo de código python, donde utilice clases, objetos, contenedores, al menos una librería externa  y archivos.
-
+La carpeta BaseDeDatos corresponde a la resolucion de este ejercicio, en el se aplico la libreria externa sqlite y con un archivo de
+salida BD.txt donde se guardan como respaldo la informacion que se va ingresando en el programa.
